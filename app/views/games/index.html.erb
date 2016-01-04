@@ -1,0 +1,36 @@
+<% provide(:title, "Explore Prior Combats") %>
+<h1>Welcome to Tic-Tac-Toe!</h1>
+
+<%= form_for :game, url: games_path do |f| %>
+  <p>
+    <%= f.submit "Play a New Game!" %>
+  </p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game #</th>
+      <th>Game Snapshot</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.id %></td>
+        <td>
+          <%= game.box1 %> | <%= game.box2 %> | <%= game.box3 %><br/>
+          <%= game.box4 %> | <%= game.box5 %> | <%= game.box6 %><br/>
+          <%= game.box7 %> | <%= game.box8 %> | <%= game.box9 %>
+        </td>
+        <td>
+          <%= link_to "Play", game %><br/>
+          <%= link_to "Delete Game", game_path(game), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  
+</table>

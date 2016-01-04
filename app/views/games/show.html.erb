@@ -1,0 +1,42 @@
+<h3>You are playing as <bold><%= @game.player1_role %>'s!</bold><br></h3>
+<h4>You're enemy is playing as <%= @game.player2_role %>'s!</h4>
+
+
+DEBUG_____<br>
+Standardized Current Game Board: <%=  @standardized_current_game_board.inspect %><br>
+Available Moves: <%=  @currently_available_moves.inspect %><br>
+Debugger: <%= @debugger %>
+END DEBUG_____
+
+
+<br><br><br>
+
+<%= @game.box1 %> | <%= @game.box2 %> | <%= @game.box3 %><br/>
+<%= @game.box4 %> | <%= @game.box5 %> | <%= @game.box6 %><br/>
+<%= @game.box7 %> | <%= @game.box8 %> | <%= @game.box9 %>
+
+<br/><br/><br/>
+<%= link_to 'Return Home', games_path %>
+
+
+
+<table>
+  <tr>
+    <% if @game.box1 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box1, :value => @game.player1_role %><%= f.submit @game.box1 %><% end %></td><% else %><td><%= button_to(@game.box1, game_path(@game), disabled: true) %></td><% end %>    <td> | </td>
+    <% if @game.box2 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box2, :value => @game.player1_role %><%= f.submit @game.box2 %><% end %></td><% else %><td><%= button_to(@game.box2, game_path(@game), disabled: true) %></td><% end %> <td> | </td>
+    <% if @game.box3 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box3, :value => @game.player1_role %><%= f.submit @game.box3 %><% end %></td><% else %><td><%= button_to(@game.box3, game_path(@game), disabled: true) %></td><% end %>  
+  </tr>
+
+  <tr>
+    <% if @game.box4 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box4, :value => @game.player1_role %><%= f.submit @game.box4 %><% end %></td><% else %><td><%= button_to(@game.box4, game_path(@game), disabled: true) %></td><% end %>    <td> | </td>
+    <% if @game.box5 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box5, :value => @game.player1_role %><%= f.submit @game.box5 %><% end %></td><% else %><td><%= button_to(@game.box5, game_path(@game), disabled: true) %></td><% end %> <td> | </td>
+    <% if @game.box6 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box6, :value => @game.player1_role %><%= f.submit @game.box6 %><% end %></td><% else %><td><%= button_to(@game.box6, game_path(@game), disabled: true) %></td><% end %>  
+  </tr>
+  
+  <tr>
+    <% if @game.box7 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box7, :value => @game.player1_role %><%= f.submit @game.box7 %><% end %></td><% else %><td><%= button_to(@game.box7, game_path(@game), disabled: true) %></td><% end %>    <td> | </td>
+    <% if @game.box8 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box8, :value => @game.player1_role %><%= f.submit @game.box8 %><% end %></td><% else %><td><%= button_to(@game.box8, game_path(@game), disabled: true) %></td><% end %> <td> | </td>
+    <% if @game.box9 == "_" %><td><%= form_for :game, url: game_path(@game), method: :patch do |f| %><%= f.hidden_field :box9, :value => @game.player1_role %><%= f.submit @game.box9 %><% end %></td><% else %><td><%= button_to(@game.box9, game_path(@game), disabled: true) %></td><% end %>  
+  </tr>
+
+</table>
