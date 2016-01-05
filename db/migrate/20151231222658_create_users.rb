@@ -21,6 +21,8 @@ class CreateUsers < ActiveRecord::Migration
     add_column :users, :reset_digest, :string
     add_column :users, :reset_sent_at, :datetime
     
+    add_column :users, :human_or_ai, :string, default: "human"
+
     
   end
 end

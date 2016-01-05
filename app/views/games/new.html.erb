@@ -1,3 +1,29 @@
+<% provide(:title, "New Game") %>
+
+Would you like to play a human or a being of Artificial Intelligence?
+
+<%= form_for :game, url: games_path do |f| %>
+  <p>
+    <%= f.submit "Play a Human!" %>
+  </p>
+<% end %>
+
+<%= form_for :game, url: games_path do |f| %>
+  <p>
+    <%= f.hidden_field :player1_human_or_ai, :value => "human" %>
+    <%= f.hidden_field :player2_human_or_ai, :value => "ai" %>
+    <%= f.submit "Play an Artificial Intellgence!" %>
+  </p>
+<% end %>
+
+<%= form_for :game, url: games_path do |f| %>
+  <p>
+    <%= f.submit "I Want To Watch AI vs AI Struggle Like Titans!" %>
+  </p>
+<% end %>
+
+
+
 new game file
 
 <%= link_to 'Return Home', games_path %>

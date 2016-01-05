@@ -1,4 +1,7 @@
 class GamesController < ApplicationController
+  def new
+  end
+
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
@@ -7,9 +10,6 @@ class GamesController < ApplicationController
   
   def index
     @games = Game.all
-  end
-  
-  def new
   end
   
   def edit

@@ -1,6 +1,8 @@
 <% provide(:title, "Explore Prior Combats") %>
 <h1>Welcome to Tic-Tac-Toe!</h1>
 
+<%= link_to "Start a new game!", new_game_path %>
+
 <%= form_for :game, url: games_path do |f| %>
   <p>
     <%= f.submit "Play a New Game!" %>
